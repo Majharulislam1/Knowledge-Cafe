@@ -1,9 +1,9 @@
 
 import 'boxicons'
 
-const Blog = ({ blog }) => {
+const Blog = ({ blog,handle_bookmark,handle_spentTime }) => {
     // console.log(blog);
-    const { author_img, author_name, img, title, hash_tags, reading_time, submit_date } = blog;
+    const { author_img, author_name, img, title, hash_tags, reading_time, submit_date,id } = blog;
     const date = new Date(submit_date);
 
     return (
@@ -24,7 +24,7 @@ const Blog = ({ blog }) => {
                             </div>
                         </div>
                         <div className='flex justify-between'>
-                            <p className="text-[#11111199] mr-4">{reading_time} min read </p>  <span className='cursor-pointer'><box-icon color='#11111199' name='bookmark'></box-icon> </span>
+                            <p className="text-[#11111199] mr-4">{reading_time} min read </p>  <span onClick={()=>handle_bookmark(id)} className='cursor-pointer'><box-icon color='#11111199' name='bookmark'></box-icon> </span>
                         </div>
                     </div>
 
@@ -45,7 +45,7 @@ const Blog = ({ blog }) => {
 
                     </div>
                     <div className='mt-4'>
-                        <button className='text-[#6047ec] font-bold underline decoration-2'>Mark As Read</button>
+                        <button onClick={()=>handle_spentTime(id)} className='text-[#6047ec] font-bold underline decoration-2'>Mark As Read</button>
                     </div>
                 </div>
             </div>
