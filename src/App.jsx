@@ -14,7 +14,7 @@ function App() {
               <Header></Header>
               <Blogs></Blogs>
         </div>
-         
+        
     </>
   )
 }
